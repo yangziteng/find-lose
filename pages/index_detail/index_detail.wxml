@@ -1,0 +1,52 @@
+<!-- 查看详情页面 -->
+<view class="contain">
+
+<view class="start">
+ 
+  <view class="objj" style="background-color:#00CED1; border: 1rpx solid #00CED1"><view class="obj">物品类别: {{infomation.type}}</view></view>
+  <!-- </view> -->
+  <view class="objj"  style=" background-color:#6495ED ;  border: 1rpx solid #6495ED;"><view class="obj">{{wp}}: {{infomation.obj_}}</view></view>
+</view>
+
+<view class="back">
+  <view class="major">
+    
+    <view class="loc">
+      <text class="txt">{{place}}: </text>
+      <text>{{infomation.school}}</text>
+    </view>
+
+    <view>     
+      <text class="txt">{{sj}}: </text>
+      <text>{{infomation.time}}</text>
+    </view>
+
+  </view>
+
+  <view class="major">
+    <view><text class="txt">联系电话: </text>
+      <text>{{infomation.phone}}</text></view>
+
+  </view>
+
+</view>
+<view class="txt">内容描述:</view>
+<view class="ggg">{{infomation.content}}</view>
+<view wx:for="{{infomation.fileIDs}}" wx:for-index="i">
+  <image bindtap="img" id="{{infomation.fileIDs[i]}}" mode="aspectFill" src="{{infomation.fileIDs[i]}}" class="cc"></image>
+</view>
+<view class="ffff">
+  <!-- <view class="local">
+    <view><image class="img" src="/image/local.png"></image></view>
+    <view class="g">{{info[index].school}}校区</view>
+  </view>  -->
+  <!-- <view wx:if="{{info[index].open==true}}"> -->
+    <!-- <view class="xs" >悬赏</view> -->
+  <!-- </view> -->
+  <view class="fon">{{infomation.post_time}}</view>
+</view> 
+
+</view>
+
+<view class="line"></view>
+<view bindtap="creat_codeimg" class="creat" style="margin-top:30rpx"  >点击生成分享二维码</view>

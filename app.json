@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/post/post",
+    "pages/post/post_detail/post_detail",
+    "pages/my/my",
+    "pages/my/post_mine/post_mine",
+    "pages/my/contant/contant",
+    "pages/share/share"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E9EFF9",
+    "navigationBarTitleText": "We拾领",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/_shouye.png",
+        "selectedIconPath": "/image/shouye.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "发布",
+        "iconPath": "/image/_post.png",
+        "selectedIconPath": "/image/post.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/image/mine.png",
+        "selectedIconPath": "/image/_mine.png"
+      }
+    ],
+    "selectedColor": "#4682B4"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "theme.json"
+}

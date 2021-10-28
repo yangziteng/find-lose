@@ -1,0 +1,28 @@
+
+.all{
+  padding-top: 50rpx;
+  height: 1500rpx;
+  background-color: #6495ED;
+  text-align: center;
+}
+.box{
+  text-align:center;
+  height: 400rpx;
+  width: 400rpx;
+  background-color: white;
+  border-radius: 40rpx;
+  margin: 0 auto;
+  margin-top:200rpx;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #696969;
+}
+.img{
+  margin-top: 10rpx;
+  height: 250rpx;
+  width: 250rpx;
+}
+.txt{
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 60rpx;
+  font-weight: 1000;
+}

@@ -1,0 +1,9 @@
+<view class="all">
+  <view   wx:for="{{obj}}" id="{{index}}"  bindtap="bind" class="box">
+    <view>
+      <image class="img" src="{{item.img}}"></image>
+      <view class="txt">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,38 @@
+<!-- 显示页面 -->
+<view   class="on">
+  <view  class="al">
+    <view class="title">我的发布</view>
+    <view class="in" wx:if="{{info.length!=[]}}">
+      <view></view>
+    </view>
+    <view class="in" wx:if="{{info.length!=[]}}">
+      <view  class="box"    wx:for="{{info}}" >
+        <view ><image bindtap="new_p" data-index="{{index}}" class="img" src="{{item.fileIDs[0]}}"></image></view>
+        <view class="gg">
+          <view class="txt1">
+           <view>{{item.obj_}}</view>
+            <view wx:if="{{item.open==true}}">
+              <view class="xs">悬赏</view>
+            </view>
+          </view>
+          <view class="type">
+           <view class="txt2">{{item.school}}</view>
+           <view wx:if="{{item.condition=='失物'}}">
+            <view class="delt" style="background-color:#5F9EA0;" >{{item.condition}}</view>  
+          </view>
+          <view wx:if="{{item.condition=='拾物'}}">
+            <view class="delt" style="background-color:#FF8C69;" >{{item.condition}}</view>  
+          </view> 
+          </view>
+          <view class="test">
+            <view class="other">{{item.type}}</view>
+            <view class="delete"  bindtap="delete"  id="{{index}}">删除</view>   
+            <view class="date">{{item.post_time}}</view>     
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:elif="{{info.length==[]}}" class="ttt">暂无发布</view>
+  </view>
+</view>
+

@@ -1,0 +1,54 @@
+<view class="ff">
+  <view class="txt" bindtap="lose_detail" style="color:{{color1}}">
+     失物信息
+  </view>
+  <view class="txt" bindtap="find_detail" style="color:{{color2}}">
+    招领信息
+  </view>
+</view>
+
+
+<view  class="on" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <view class="big_contain"  >
+    <view class="contain">
+      <view class="fg">
+        <view class="typ">类别：</view>
+        <picker class="fo" mode="selector" range="{{type_list}}" value="0" bindchange="choose_type">{{type}}
+          <image src="/image/sanjiao.png" class="pic"></image></picker>
+      </view>
+      <view class="fg">
+        <view class="typ">校区：</view>
+        <picker class="fo" mode="selector" range="{{school_list}}" value="0" bindchange="choose_school">{{school}}
+          <image src="/image/sanjiao.png" class="pic"></image>
+        </picker>
+      </view>
+    </view>
+    <view class="in" wx:if="{{info.length!=[]}}">
+      <view class="box" bindtap="new_p"  wx:for="{{info}}"  data-index="{{index}}" data-id="{{index}}">
+        <view ><image class="img" mode="aspectFill" src="{{item.fileIDs[0]}}"></image></view>
+        <view class="gg">
+          <view class="txt1">
+            <view>{{item.obj_}}</view>
+            <view wx:if="{{item.open==true}}">
+              <view class="xs">悬赏</view>
+            </view>
+          </view>
+          <view class="type">
+           <view class="txt2">{{item.school}}</view>
+           <view wx:if="{{item.condition=='失物'}}">
+            <view class="delete" style="background-color:#5F9EA0;" >{{item.condition}}</view>  
+          </view>
+          <view wx:if="{{item.condition=='拾物'}}">
+            <view class="delete" style="background-color:#FF8C69;" >{{item.condition}}</view>  
+          </view>
+          </view>
+          <view class="test">
+            <view class="other">{{item.type}}</view>
+            <view class="date">{{item.post_time}}</view>    
+          </view>
+        </view>
+      </view>
+    </view>
+      <view wx:elif="{{info.length==[]}}" class="ttt">暂无发布</view>
+  </view>
+</view>

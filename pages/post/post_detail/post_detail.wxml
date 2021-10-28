@@ -1,0 +1,119 @@
+
+<view class="ftf" wx:if="{{id==0}}">
+  <view  class="ttt" style="border-top-left-radius:20rpx;border-top-right-radius:20rpx">
+    <view class="ttt_obj_">
+      <view  class="txt_">丢失物品</view>
+      <input class="ttt_obj_input"  bindinput='input_item' placeholder="请输入您的丢失的物品" maxlength="6"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">物品类别</view>
+      <picker mode="selector" class="ttt_obj_input_choose" bindchange="get_style"  range="{{all_obj}}" index="0" bindchange="get_style" style="color:{{choosecolor_}}">{{values}}</picker>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">联系方式</view>
+      <input class="ttt_obj_input" type="number" bindinput='input_phone' placeholder="请输入您的手机号" maxlength="11"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">丢失时间</view>
+      <input class="ttt_obj_input" bindinput='input_time' placeholder="请输您丢失物品的时间" maxlength="8"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">所在校区</view>
+      <picker mode="selector" class="ttt_obj_input_choose" bindchange="get_school"  range="{{all_school}}" index="0" style="color:{{choosecolor}}">{{school}}</picker>
+    </view>
+  </view>
+  <view  class="ttt" style="border-bottom-left-radius:20rpx;border-bottom-right-radius:20rpx">
+    <view class="ttt_obj_" >
+      <view  class="txt_">是否悬赏</view>
+      <view class="xueshang">
+        否
+        <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
+        是
+      </view>
+    </view>
+  </view>
+  <view class="fff">
+    <view class="fff_obj">物品描述</view>
+    <view class="intro">
+      <textarea  maxlength="500"  bindinput='input_intro' placeholder="请输入内容描述（必填）"></textarea>
+    </view>
+    <view class="image_content">
+      <view class='image' wx:for="{{img_url}}" wx:key="{{index}}">
+        <image class="moment_img" src="{{item}}" mode="aspectFill"></image>
+        <view class="iconfont icon-cha cha" id="{{item}}" bindtap="deleteImg"></view>
+      </view>
+
+      <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+        <image bindtap="chooseimage" class="moment_img" src='/image/add3.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="submit">
+    <button open-type="getUserInfo" bindgetuserinfo="userinfo" bindtap="submit" class="main">
+      <text>确定发布</text>
+    </button>
+  </view>
+</view>
+
+<view class="ftf" wx:if="{{id==1}}">
+  <view  class="ttt" style="border-top-left-radius:20rpx;border-top-right-radius:20rpx">
+    <view class="ttt_obj_">
+      <view  class="txt_">拾到物品</view>
+      <input class="ttt_obj_input"  bindinput='input_item' placeholder="请输入您捡到的物品" maxlength="8"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">物品类别</view>
+      <picker mode="selector" class="ttt_obj_input_choose" bindchange="get_style"  range="{{all_obj}}" index="0" bindchange="get_style" style="color:{{choosecolor_}}">{{values}}</picker>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">联系方式</view>
+      <input class="ttt_obj_input" type="number" bindinput='input_phone' placeholder="请输入您的手机号" maxlength="11"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">拾到时间</view>
+      <input class="ttt_obj_input" bindinput='input_time' placeholder="请输您拾到物品的时间" maxlength="8"></input>
+    </view>
+  </view>
+  <view  class="ttt">
+    <view class="ttt_obj_">
+      <view  class="txt_">所在校区</view>
+      <picker mode="selector" class="ttt_obj_input_choose" bindchange="get_school" style="color:{{choosecolor}}"  range="{{all_school}}" index="0">{{school}}</picker>
+    </view>
+  </view>
+
+  <view class="fff">
+    <view class="fff_obj">物品描述</view>
+    <view class="intro">
+      <textarea  maxlength="500"  bindinput='input_intro' placeholder="请输入内容描述（必填）"></textarea>
+    </view>
+    <view class="image_content">
+      <view class='image' wx:for="{{img_url}}" wx:key="{{index}}">
+        <image class="moment_img" src="{{item}}" mode="aspectFill"></image>
+        <view class="iconfont icon-cha cha" id="{{item}}" bindtap="deleteImg"></view>
+      </view>
+
+      <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+        <image bindtap="chooseimage" class="moment_img" src='/image/add3.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="submit">
+    <button open-type="getUserInfo" bindgetuserinfo="userinfo" bindtap="submit" class="main">
+      <text>确定发布</text>
+    </button>
+  </view>
+</view>

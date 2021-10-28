@@ -1,0 +1,31 @@
+<view class="all">
+<view class="container">
+  <view class="title">
+    <view class="title_bg"></view>
+  </view>
+</view>
+  <view class="hd">
+    <image class="logo" src="/image/xiaohui.png"></image>
+  </view>
+</view>
+
+<view  class="content">
+  <view class="content-vi">
+    <navigator class="ico"  wx:for="{{detail}}" url="{{item.url}}">
+      <image class="pic" src="{{item.src}}"></image>
+      <view class="txt" > {{item.name}}</view>
+    </navigator>
+    <view class="ico" bindtap="prize">
+       <image class="pic" src="/image/ds.png"></image>
+      <view  class="txt"> 打赏一下</view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-beingshawn">
+    </view>
+    <text>WE拾领</text>
+    <text>Copyright @ 2021</text>
+  </view>
+</view>
+
+

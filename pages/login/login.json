@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "@loginnavBackgroundColor",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "navigationBarTitleText": "We拾领 - 登录"
+}

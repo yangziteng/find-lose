@@ -1,0 +1,41 @@
+/* pages/my/contant/contant.wxss */
+page{
+  background-color: #E9EFF9;
+}
+.intro_title{
+  /* margin-left:30rpx; */
+  margin: 30rpx;
+  font-size:36rpx;
+  margin:20rpx;
+
+
+}
+.intro_content{
+  margin:20rpx;
+  color:rgba(0,0,0,0.6)
+}
+.intro{
+  padding: 10rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  padding-bottom:60rpx ;
+}
+.title{
+  background-color: white;
+  margin-bottom:20rpx;
+  padding: 20rpx;
+  border-radius: 0rpx 0rpx 30rpx 30rpx;
+  font-size: 38rpx;
+}
+.img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 160rpx;
+  margin:20rpx
+}
+.sort{
+  display: block;
+  text-align: center;
+  width: 200rpx;
+  margin-bottom: 20rpx;
+}
