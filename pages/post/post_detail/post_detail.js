@@ -136,6 +136,7 @@ submit_con:function (e,fileIDS) {
                 title: '加载中',
                 success(res){
                   var condition= that.data.id== '1' ? "拾物" : "失物"
+                  var index =that.data.id == "1"? app.globalData.find_total : app.globalData.lose_total
                   data.add({
                     data:{
                       id:that.data.id,
@@ -149,7 +150,7 @@ submit_con:function (e,fileIDS) {
                       condition:condition,
                       post_time:that.data.post_time,
                       open:that.data.switch1Checked,
-                      index:app.globalData.info_len
+                      index:index
                     },
                     success:res=>{
                       console.log(res)

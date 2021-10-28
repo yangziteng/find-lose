@@ -10,10 +10,13 @@
   <view class="intro_title">团队成员</view>
   <view class="intro_content">
     <view class="developer" style="color:rgba(0,0,0,0.8)">开发者\n</view>
-    <view class="sort">
-      <image src="/image/toux.jpg" class="img"></image>
-      <view>騰丶</view>
+    <view style="display:flex" >
+      <view class="sort" wx:for="{{developer_detail}}">
+        <image src="{{item.img}}" class="img"></image>
+        <view>{{item.name}}</view>
+      </view>
     </view>
+    
     <view class="developer" style="color:rgba(0,0,0,0.8)" >运营推广</view>
     <view class="sort">
       <image src="/image/ping.jpg" class="img"></image>
@@ -29,5 +32,12 @@
 *感谢所有对该产品支持的人。
     </text>
   </view>
+  <view class="intro_title">其他</view>
+  <view class="intro_content">
+    <text space="emsp" >为保护信息安全，我们只获取学号信息数据。\n</text>
+    <text space="emsp" >本小程序代码开源，有兴趣的同学可以pull学习\n</text>
+    <text space="emsp" >github地址：https://github.com/yangziteng/find-lose\n</text>
+  </view>
   <button  type="primary" open-type='contact'>联系客服</button>
+ 
 </view>

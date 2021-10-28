@@ -76,7 +76,6 @@ exports.main = async(event, context) => {
       })
     })
     if (JSON.parse(postResponse.body).msg == "/login!welcome.action") {
-      
        return true
     }
     else{

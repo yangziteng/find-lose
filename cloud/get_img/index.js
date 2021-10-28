@@ -7,13 +7,12 @@ cloud.init()
 exports.main = async (event, context) => {
   try {
     const result = await cloud.openapi.wxacode.get({
-        "path": 'page/index_detail/index_detail?'+event.query,
-        "width": 600,
+        "path": 'pages/index_detail/index_detail?'+event.query,
+        "width": 400,
         auto_color:true,
-        // "isHyaline":true
       })
       const upload = await cloud.uploadFile({
-        cloudPath: 'wxacode.png',
+        cloudPath:'wxcode/' + new Date().getTime() + Math.floor(Math.random() * 150) + '.png',
         fileContent: result.buffer,
       })
       return {

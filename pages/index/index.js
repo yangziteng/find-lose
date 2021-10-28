@@ -53,6 +53,16 @@ Page({
     this.f_f(e,this.data.id)
 
   },
+  get_count:function(){
+     data.where({id:"0"}).count().then(res =>{
+      console.log(res.total)
+      app.globalData.lose_total = res.total
+    })
+     data.where({id:"1"}).count().then(res =>{
+      console.log(res.total)
+      app.globalData.find_total = res.total
+    })
+  },
   navigatelogin:function (e) {
     var that =this
     wx.cloud.callFunction({
@@ -168,8 +178,7 @@ Page({
         that.setData({
           info:res.result.data,
         })
-        app.globalData.info_len=res.result.data.length
-        console.log(app.globalData.info_len)
+        console.log(res.result.data)
         wx.hideLoading()
       }
     })
@@ -197,6 +206,7 @@ Page({
     this.choose(e,that)
   },
   onShow: function (e) {
+    this.get_count()
     this.navigatelogin(e)
     if(this.data.type=="全部"&this.data.school=="全部"){
       this.f_f(e,this.data.id)

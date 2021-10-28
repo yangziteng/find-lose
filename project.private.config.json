@@ -65,6 +65,12 @@
           "pathName": "pages/index_detail/index_detail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/share/share",
+          "pathName": "pages/share/share",
+          "query": "",
+          "scene": null
         }
       ]
     }

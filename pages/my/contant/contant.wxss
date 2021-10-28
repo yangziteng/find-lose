@@ -36,6 +36,6 @@ page{
 .sort{
   display: block;
   text-align: center;
-  width: 200rpx;
+  width: 160rpx;
   margin-bottom: 20rpx;
 }

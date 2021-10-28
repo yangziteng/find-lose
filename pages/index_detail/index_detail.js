@@ -2,6 +2,7 @@
 wx.cloud.init()
 const db = wx.cloud.database()
 const data_name = db.collection('usernameid')
+const data = db.collection('find_lose_obj')
 var app= getApp()
 Page({
 
@@ -11,6 +12,7 @@ Page({
   data: {
     info:[],
     index:"",
+    id:""
   },
 
 
@@ -26,8 +28,19 @@ Page({
    */
   //每次页面加载时获取数据，根据index定位
   onLoad: function (e) {
-    console.log(e.infomation)
-    this.navigatelogin()
+    var index = app.globalData.index
+    if (index ==-1){
+      if(e.index){
+        console.log(e.index,2222)
+        index = e.index
+        this.navigatelogin(index)
+      }
+    
+    }
+    else{
+      this.navigatelogin(index)
+    }
+    
     
 
   },
@@ -75,32 +88,41 @@ Page({
 
   },
   //获得初始化数据info和index
-  navigatelogin:function (e) {
+  navigatelogin:function (index) {
     var that =this
-       var infomation=app.globalData.info[app.globalData.index]
-       
-        console.log(app.globalData.info)
-        that.setData({
-        infomation:infomation
-      })
-     
-    if(infomation.condition=="失物")
-      that.setData({
-        wp:"丢失物品",
-        place:"所在校区",
-        sj:"丢失时间"
-      })
-        else if(infomation.condition=="拾物")
-        that.setData({
-          wp:"拾捡物品",
-          place:"所在校区",
-          sj:"拾物时间"
-      })
+      //  var infomation=app.globalData.info[app.globalData.index]
+       console.log(index,"index")
+       data.where({index:index,id:app.globalData.id }).get({
+         success(res){
+           console.log(res)
+           that.setData({
+            infomation:res.data[0],
+            index:index
+          })
+          var infomation =that.data.infomation
+          console.log(infomation,222)
+          if(infomation.condition=="失物")
+          that.setData({
+            wp:"丢失物品",
+            place:"所在校区",
+            sj:"丢失时间"
+          })
+            else if(infomation.condition=="拾物")
+            that.setData({
+              wp:"拾捡物品",
+              place:"所在校区",
+              sj:"拾物时间"
+          })
+         }
+       })
+   
+    
+   
  },
   //获取专属二维码
   creat_codeimg:function (e) {
-    var infomation = JSON.stringify(this.data.infomation) 
-    var query = "?infomation="+infomation
+    var index = this.data.index
+    var query = "index="+index
     console.log(query)
     wx.showLoading({
       title: '二维码生成中',

@@ -1,7 +1,7 @@
 <view class="img">
   <image bindtap="img" src="{{image}}"></image>
 </view>
-<!-- <view bindtap="saveImageToPhotosAlbum" >保存本地</view>
-<view>
-  保存图片后转发朋友圈即可生成失物、寻物专属二维码
-</view> -->
+<!-- <!-- <view bindtap="saveImageToPhotosAlbum" >保存本地</view> -->
+<view style="margin:10rpx">
+  <text space="ensp" >  保存图片后转发朋友圈即可生成失物、寻物专属二维码。 </text>
+</view> 

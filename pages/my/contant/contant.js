@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    developer_detail:[
+      {
+        name:"騰丶",
+        img:"/image/toux.jpg"
+      },
+      {
+        name:"Grace",
+        img:"/image/yingqi.jpg"
+      }
+    ]
   },
 
   /**
