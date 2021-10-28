@@ -28,17 +28,19 @@ Page({
    */
   //每次页面加载时获取数据，根据index定位
   onLoad: function (e) {
+    this.setData({id:e.id})
     var index = app.globalData.index
     if (index ==-1){
       if(e.index){
         console.log(e.index,2222)
         index = e.index
-        this.navigatelogin(index)
+        id = e.id
+        this.navigate(index,id)
       }
     
     }
     else{
-      this.navigatelogin(index)
+      this.navigate(index,this.data.id)
     }
     
     
@@ -88,11 +90,11 @@ Page({
 
   },
   //获得初始化数据info和index
-  navigatelogin:function (index) {
+  navigate:function (index,id) {
     var that =this
       //  var infomation=app.globalData.info[app.globalData.index]
        console.log(index,"index")
-       data.where({index:index,id:app.globalData.id }).get({
+       data.where({index:index,id:id }).get({
          success(res){
            console.log(res)
            that.setData({
@@ -122,7 +124,8 @@ Page({
   //获取专属二维码
   creat_codeimg:function (e) {
     var index = this.data.index
-    var query = "index="+index
+    var id = this.data.id
+    var query = "index="+index+"&id="+id
     console.log(query)
     wx.showLoading({
       title: '二维码生成中',
@@ -133,25 +136,28 @@ Page({
         query:query
       },
       success(res){
-        wx.hideLoading()
+      
         console.log(res)
         console.log(res.result.wxacodefileID)
         app.globalData.imgid = res.result.wxacodefileID
         wx.navigateTo({
           url: '/pages/share/share',
         })
-     
+        wx.hideLoading()
       }
     })
   },
   /**
    * 用户点击右上角分享
    */
-  // onShareAppMessage: function (e) {
-  //   wx.showShareMenu({
-  //     withShareTicket: true,
-  //     menus: ['shareAppMessage', 'shareTimeline']
-  //   })
+  onShareAppMessage: function (e) {
+    var index = this.data.index
+    this.navigatelogin(index)
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
+  }
    
   // },
   // onShareTimeline() {

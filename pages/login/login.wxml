@@ -1,31 +1,3 @@
-<!-- <view class="container">
-  <view class="loginbox">
-    <view class="usermotto">
-      <view class="imagewei">
-        <image src="/images/xiaohui.png" class="loginicon1"></image>
-      </view>
-      <text class="user-motto">广东石油化工学院</text>
-      <form bindsubmit="login">
-        <view class="cp-input">
-          <view style="display:inline-block;">
-            <image src="/images/sno.png" class="loginicon"></image>
-            <input type="text" name="username" style="float:right;" placeholder="请输入学号" />
-          </view>
-          <view>
-            <image src="/images/pasw.png" class="loginicon"></image>
-            <input type="text" name="password" password="true" style="float:right;" placeholder="请输入密码" />
-          </view>
-
-          <button bindtap="activity">关于</button>
-         <button formType="submit">登录</button>
-        </view>
-      </form>
-    </view>
-  </view>
-              新生初始密码可能是学号
-        忘记密码或者修改密码请在教务官网修改 网站为：http://210.38.250.43/ \n
-</view> -->
-
 <view class="all">
 
 <view class="container">

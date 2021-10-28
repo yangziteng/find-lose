@@ -4,6 +4,7 @@ App({
     userInfo: null,
     index:-1,
     lose_total:null,
-    find_total:null
+    find_total:null,
+    id:"0"
   }
 })

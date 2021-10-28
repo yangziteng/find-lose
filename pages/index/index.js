@@ -153,7 +153,7 @@ Page({
       title: '加载中',
       success(res){
         wx.navigateTo({
-          url: '/pages/index_detail/index_detail'
+          url: '/pages/index_detail/index_detail?id='+that.data.id
         })
         //将index放在全局变量
         app.globalData.index=index
