@@ -7,7 +7,7 @@
     </view>
     <view class="in" wx:if="{{info.length!=[]}}">
       <view  class="box"    wx:for="{{info}}" >
-        <view ><image bindtap="new_p" data-index="{{index}}" class="img" src="{{item.fileIDs[0]}}"></image></view>
+        <view ><image mode="aspectFill" bindtap="new_p" data-index="{{index}}" class="img" src="{{item.fileIDs[0]}}"></image></view>
         <view class="gg">
           <view class="txt1">
            <view>{{item.obj_}}</view>

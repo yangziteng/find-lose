@@ -125,7 +125,8 @@ submit_con:function (e,fileIDS) {
     this.data.phone!=""&
     this.data.schoo_l!=""&
     this.data.time!=""&
-    this.data.obj_!=""){
+    this.data.obj_!=""&
+    this.data.fileIDS!=[]){
       if(isPhone==true){
         wx.showModal({
           title:"提示",

@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
   try {
     const result = await cloud.openapi.wxacode.get({
         "path": 'pages/index_detail/index_detail?'+event.query,
-        "width": 400,
+        // "width": 400,
         auto_color:true,
       })
       const upload = await cloud.uploadFile({

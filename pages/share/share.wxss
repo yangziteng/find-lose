@@ -3,7 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
+}
+image{
+  height: 640rpx;
 }
 text{
   font-size: 27rpx;

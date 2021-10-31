@@ -2,7 +2,7 @@
 App({
   globalData: {
     userInfo: null,
-    index:-1,
+    index:null,
     lose_total:null,
     find_total:null,
     id:"0"

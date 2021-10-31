@@ -25,7 +25,8 @@ page{
   /* break-inside: avoid; */
   /* display: flex; */
   width: 350rpx;
-  height: 480rpx;
+  padding-bottom:15rpx ;
+  /* height: 480rpx; */
   margin:10rpx;
   background-color: white;
   border-radius:30rpx ;
@@ -51,14 +52,16 @@ page{
   margin-left:15rpx ;
 }
 .txt2{
+  font-weight: 1000;
   color:white;
   background-color: #6495ED;
-  font-size: 24rpx;
-  width: 48rpx;
-  height: 46rpx;
-  margin-top:5rpx ;
-  border-radius:20rpx ;
-  padding-top:7rpx ;
+  padding: 6rpx;
+  width: 60rpx;
+  font-size: 22rpx;
+  color:white;
+  text-align: center;
+  border-radius: 30rpx;
+
 }
 .other{
   font-size: 24rpx;
@@ -106,15 +109,15 @@ page{
    bottom: 0rpx;
 }
 .delt{
-  margin-right:20rpx ;
+  margin-right:10rpx ;
   color:white;
-  font-size: 24rpx;
-  width: 48rpx;
-  height: 46rpx;
-  margin-top:5rpx ;
-  border-radius:20rpx ;
-  padding-top:7rpx ;
-
+  font-weight: 1000;
+  padding: 6rpx;
+  width: 60rpx;
+  font-size: 22rpx;
+  color:white;
+  text-align: center;
+  border-radius: 30rpx;
 }
 .post button{
   color:#2B61B2;
@@ -166,7 +169,7 @@ page{
 .xs{
   background-color: rgba(90,210,250,1);
   font-weight: 1000;
-  padding-top: 6rpx;
+  padding: 8rpx;
   width: 60rpx;
   font-size: 24rpx;
   color:white;

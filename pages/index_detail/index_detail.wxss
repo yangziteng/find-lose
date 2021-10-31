@@ -101,7 +101,6 @@ color:#37B1D2;
 font-size: 30rpx;
 } 
 .xs{
-  background-color: Gold;
   font-weight: 1000;
   padding-top: 6rpx;
   width: 60rpx;

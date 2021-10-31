@@ -28,22 +28,19 @@ Page({
    */
   //每次页面加载时获取数据，根据index定位
   onLoad: function (e) {
-    this.setData({id:e.id})
-    var index = app.globalData.index
-    if (index ==-1){
-      if(e.index){
-        console.log(e.index,2222)
-        index = e.index
-        id = e.id
-        this.navigate(index,id)
-      }
-    
-    }
-    else{
-      this.navigate(index,this.data.id)
-    }
-    
-    
+    console.log(e)
+    this.navigate(Number(e.index),e.id)
+    this.setData({id:e.id,index:e.index})
+    // console.log(e)
+    // this.navigate(Number(e.index),e.id)
+    // this.setData({id:e.id,index:e.index})
+  //  if(e.index){
+  //   that.navigate(Number(e.index),e.id)
+  // }
+  //   else{
+  //     var index = app.globalData.index
+  //     that.navigate(index,this.data.id)
+  //   }
 
   },
 
@@ -89,11 +86,12 @@ Page({
   onReachBottom: function () {
 
   },
-  //获得初始化数据info和index
+  //获得初始化数据info
   navigate:function (index,id) {
     var that =this
       //  var infomation=app.globalData.info[app.globalData.index]
        console.log(index,"index")
+       console.log(id)
        data.where({index:index,id:id }).get({
          success(res){
            console.log(res)

@@ -74,7 +74,6 @@ Page({
         data_name.where({ide:"name"+res.result.openid}).get({
           success(res){
             console.log(res,62)
-           
             if(res.data.length==0){
               wx.showModal({
                 title:"提示",
@@ -152,11 +151,12 @@ Page({
     wx.showLoading({
       title: '加载中',
       success(res){
+        app.globalData.index=index
         wx.navigateTo({
-          url: '/pages/index_detail/index_detail?id='+that.data.id
+          url: '/pages/index_detail/index_detail?id='+that.data.id+"&index="+app.globalData.index
         })
         //将index放在全局变量
-        app.globalData.index=index
+       
         app.globalData.info=that.data.info
         console.log(that.data.info[0])
       }

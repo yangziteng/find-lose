@@ -81,13 +81,14 @@ Page({
     wx.showLoading({
       title: '加载中',
       success(res){
+        app.globalData.index=index
         wx.navigateTo({
-          url: '/pages/index_detail/index_detail'
+          url: '/pages/index_detail/index_detail?id='+that.data.info[index].id+"&index="+that.data.info[index].index
         })
         //将index放在全局变量
-        app.globalData.index=index
-        app.globalData.info=that.data.info
-        console.log(that.data.info[0])
+       
+        // app.globalData.info=that.data.info
+        // console.log(that.data.info[index].id)
         wx.hideLoading()
       }
     })
