@@ -158,7 +158,7 @@ Page({
         //将index放在全局变量
        
         app.globalData.info=that.data.info
-        console.log(that.data.info[0])
+        console.log(that.data.info[index])
       }
     })
    

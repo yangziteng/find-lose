@@ -31,17 +31,7 @@ Page({
     console.log(e)
     this.navigate(Number(e.index),e.id)
     this.setData({id:e.id,index:e.index})
-    // console.log(e)
-    // this.navigate(Number(e.index),e.id)
-    // this.setData({id:e.id,index:e.index})
-  //  if(e.index){
-  //   that.navigate(Number(e.index),e.id)
-  // }
-  //   else{
-  //     var index = app.globalData.index
-  //     that.navigate(index,this.data.id)
-  //   }
-
+   
   },
 
   /**
@@ -92,11 +82,11 @@ Page({
       //  var infomation=app.globalData.info[app.globalData.index]
        console.log(index,"index")
        console.log(id)
-       data.where({index:index,id:id }).get({
+       data.where({id:id}).get({
          success(res){
            console.log(res)
            that.setData({
-            infomation:res.data[0],
+            infomation:res.data[index],
             index:index
           })
           var infomation =that.data.infomation

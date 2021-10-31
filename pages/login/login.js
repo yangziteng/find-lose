@@ -82,7 +82,6 @@ Page({
               data.add({
                 data:{
                   user:that.data.user,
-                  password:that.data.password,
                   ide:"name"+res.result.openid 
                 },
                 success(res){

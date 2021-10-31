@@ -8,12 +8,7 @@ const db = cloud.database()
 const _ = db.command;
 // 云函数入口函数
 exports.main = async(event, context) => {
-  if (event.password == "test"){
-    event.password = "1122qq3344"
-  }
-  if (event.username == "test") {
-    event.username = "18024030112"
-  }
+
     var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
       output = "";
     var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
